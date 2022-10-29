@@ -47,7 +47,7 @@ namespace Lucene.Net.Search.Suggest.Analyzing
         /// <summary>
         /// Coefficient used for linear blending
         /// </summary>
-        private static readonly double LINEAR_COEF = 0.10;
+        private static readonly double LinearCoef = 0.10;
 
         /// <summary>
         /// Default factor
@@ -289,7 +289,7 @@ namespace Lucene.Net.Search.Suggest.Analyzing
             switch (blenderType)
             {
                 case BlendedInfixSuggester.BlenderType.POSITION_LINEAR:
-                    coefficient = 1 - LINEAR_COEF * position;
+                    coefficient = 1 - LinearCoef * position;
                     break;
 
                 case BlendedInfixSuggester.BlenderType.POSITION_RECIPROCAL:

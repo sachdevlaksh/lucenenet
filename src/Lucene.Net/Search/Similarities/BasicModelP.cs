@@ -33,7 +33,7 @@ namespace Lucene.Net.Search.Similarities
     {
         /// <summary>
         /// <c>log2(Math.E)</c>, precomputed. </summary>
-        private static double LOG2_E = Log2(Math.E);
+        private static readonly double Log2E = Log2(Math.E);
 
         /// <summary>
         /// Sole constructor: parameter-free </summary>
@@ -44,7 +44,7 @@ namespace Lucene.Net.Search.Similarities
         public override sealed float Score(BasicStats stats, float tfn)
         {
             float lambda = (float)(stats.TotalTermFreq + 1) / (stats.NumberOfDocuments + 1);
-            return (float)(tfn * Log2(tfn / lambda) + (lambda + 1 / (12 * tfn) - tfn) * LOG2_E + 0.5 * Log2(2 * Math.PI * tfn));
+            return (float)(tfn * Log2(tfn / lambda) + (lambda + 1 / (12 * tfn) - tfn) * Log2E + 0.5 * Log2(2 * Math.PI * tfn));
         }
 
         public override string ToString()

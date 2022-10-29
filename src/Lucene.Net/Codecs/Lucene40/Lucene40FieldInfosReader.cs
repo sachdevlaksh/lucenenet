@@ -37,7 +37,7 @@ namespace Lucene.Net.Codecs.Lucene40
     /// <summary>
     /// Lucene 4.0 FieldInfos reader.
     /// <para/>
-    /// @lucene.experimental 
+    /// @lucene.experimental
     /// </summary>
     /// <seealso cref="Lucene40FieldInfosFormat"/>
     [Obsolete("Only for reading old 4.0 and 4.1 segments")]
@@ -191,7 +191,7 @@ namespace Lucene.Net.Codecs.Lucene40
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DocValuesType GetMapping(this LegacyDocValuesType legacyDocValuesType)
         {
-            return mapping[legacyDocValuesType];
+            return Mapping[legacyDocValuesType];
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -201,7 +201,7 @@ namespace Lucene.Net.Codecs.Lucene40
         }
 
         // mapping of 4.0 types -> 4.2 types
-        private static IDictionary<LegacyDocValuesType, DocValuesType> mapping = new Dictionary<LegacyDocValuesType, DocValuesType>
+        private static readonly IDictionary<LegacyDocValuesType, DocValuesType> Mapping = new Dictionary<LegacyDocValuesType, DocValuesType>
         {
             { LegacyDocValuesType.NONE, DocValuesType.NONE },
             { LegacyDocValuesType.VAR_INTS, DocValuesType.NUMERIC },

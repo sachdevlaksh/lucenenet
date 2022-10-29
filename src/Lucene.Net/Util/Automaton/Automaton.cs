@@ -78,11 +78,11 @@ namespace Lucene.Net.Util.Automaton
         /// the most generally efficient algorithms that exist.
         /// </summary>
         /// <seealso cref="SetMinimization(int)"/>
-        public const int MINIMIZE_HOPCROFT = 2;
+        private const int MINIMIZE_HOPCROFT = 2;
 
         /// <summary>
         /// Selects minimization algorithm (default: <c>MINIMIZE_HOPCROFT</c>). </summary>
-        private static int minimization = MINIMIZE_HOPCROFT;
+        private static int _minimization = MINIMIZE_HOPCROFT;
 
         /// <summary>
         /// Initial state of this automaton. </summary>
@@ -109,13 +109,13 @@ namespace Lucene.Net.Util.Automaton
 
         /// <summary>
         /// Minimize always flag. </summary>
-        private static bool minimize_always = false;
+        private static bool _minimizeAlways = false;
 
         /// <summary>
         /// Selects whether operations may modify the input automata (default:
         /// <c>false</c>).
         /// </summary>
-        private static bool allow_mutation = false;
+        private static bool _allowMutation = false;
 
         /// <summary>
         /// Constructs a new automaton that accepts the empty language. Using this
@@ -143,7 +143,7 @@ namespace Lucene.Net.Util.Automaton
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetMinimization(int algorithm)
         {
-            minimization = algorithm;
+            _minimization = algorithm;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Lucene.Net.Util.Automaton
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetMinimizeAlways(bool flag)
         {
-            minimize_always = flag;
+            _minimizeAlways = flag;
         }
 
         /// <summary>
@@ -170,8 +170,8 @@ namespace Lucene.Net.Util.Automaton
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool SetAllowMutate(bool flag)
         {
-            bool b = allow_mutation;
-            allow_mutation = flag;
+            bool b = _allowMutation;
+            _allowMutation = flag;
             return b;
         }
 
@@ -182,12 +182,12 @@ namespace Lucene.Net.Util.Automaton
         /// default, the flag is not set.
         /// </summary>
         /// <returns> current value of the flag </returns>
-        internal static bool AllowMutate => allow_mutation;
+        internal static bool AllowMutate => _allowMutation;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual void CheckMinimizeAlways()
         {
-            if (minimize_always)
+            if (_minimizeAlways)
             {
                 MinimizationOperations.Minimize(this);
             }
@@ -625,10 +625,10 @@ namespace Lucene.Net.Util.Automaton
             //throw UnsupportedOperationException.Create("use BasicOperations.sameLanguage instead");
         }
 
-        // LUCENENET specific - in .NET, we can't simply throw an exception here because 
+        // LUCENENET specific - in .NET, we can't simply throw an exception here because
         // collections use this to determine equality. Most of this code was pieced together from
         // BasicOperations.SubSetOf (which, when done both ways determines equality).
-        public override int GetHashCode() 
+        public override int GetHashCode()
         {
             if (IsSingleton)
             {
@@ -762,13 +762,13 @@ namespace Lucene.Net.Util.Automaton
         }
 
         /// <summary>
-        /// Returns a clone of this automaton unless <see cref="allow_mutation"/> is
+        /// Returns a clone of this automaton unless <see cref="_allowMutation"/> is
         /// set, expands if singleton.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual Automaton CloneExpandedIfRequired()
         {
-            if (allow_mutation)
+            if (_allowMutation)
             {
                 ExpandSingleton();
                 return this;
@@ -813,12 +813,12 @@ namespace Lucene.Net.Util.Automaton
 
         /// <summary>
         /// Returns a clone of this automaton, or this automaton itself if
-        /// <see cref="allow_mutation"/> flag is set.
+        /// <see cref="_allowMutation"/> flag is set.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual Automaton CloneIfRequired()
         {
-            if (allow_mutation)
+            if (_allowMutation)
             {
                 return this;
             }
