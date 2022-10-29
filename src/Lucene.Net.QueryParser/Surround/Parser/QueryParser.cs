@@ -865,7 +865,7 @@ namespace Lucene.Net.QueryParsers.Surround.Parser
             {
                 exptokseq[i] = jj_expentries[i];
             }
-            return new ParseException(Token, exptokseq, QueryParserConstants.TokenImage);
+            return new ParseException(Token, exptokseq, QueryParserConstants.TOKEN_IMAGE);
         }
 
         /// <summary>Enable tracing. </summary>

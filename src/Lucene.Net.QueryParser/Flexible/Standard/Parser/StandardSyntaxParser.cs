@@ -1253,7 +1253,7 @@ namespace Lucene.Net.QueryParsers.Flexible.Standard.Parser
             {
                 exptokseq[i] = jj_expentries[i];
             }
-            return new ParseException(Token, exptokseq, StandardSyntaxParserConstants.TokenImage);
+            return new ParseException(Token, exptokseq, StandardSyntaxParserConstants.TOKEN_IMAGE);
         }
 
 

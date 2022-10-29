@@ -191,7 +191,7 @@ namespace Lucene.Net.Codecs.Lucene40
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DocValuesType GetMapping(this LegacyDocValuesType legacyDocValuesType)
         {
-            return Mapping[legacyDocValuesType];
+            return mapping[legacyDocValuesType];
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -201,7 +201,7 @@ namespace Lucene.Net.Codecs.Lucene40
         }
 
         // mapping of 4.0 types -> 4.2 types
-        private static readonly IDictionary<LegacyDocValuesType, DocValuesType> Mapping = new Dictionary<LegacyDocValuesType, DocValuesType>
+        private static readonly IDictionary<LegacyDocValuesType, DocValuesType> mapping = new Dictionary<LegacyDocValuesType, DocValuesType>
         {
             { LegacyDocValuesType.NONE, DocValuesType.NONE },
             { LegacyDocValuesType.VAR_INTS, DocValuesType.NUMERIC },

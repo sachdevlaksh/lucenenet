@@ -108,7 +108,7 @@ namespace Lucene.Net.QueryParsers.Classic
     public static class QueryParserConstants
     {
         /// <summary>Literal token values. </summary>
-        internal static readonly string[] TokenImage = new string[] {
+        internal static readonly string[] TOKEN_IMAGE = new string[] {
             "<EOF>",
             "<_NUM_CHAR>",
             "<_ESCAPED_CHAR>",
