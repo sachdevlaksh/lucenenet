@@ -47,7 +47,7 @@ namespace Lucene.Net.Analysis.En
         private KStemData5()
         {
         }
-        internal static string[] data = new string[] {
+        internal static readonly string[] data = new string[] {
             "lock","locker","locket","lockjaw","locknut",
             "lockout","locks","locksmith","lockstitch","lockup",
             "loco","locomotion","locomotive","locum","locus",

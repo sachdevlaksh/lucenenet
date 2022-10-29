@@ -33,7 +33,7 @@ namespace Lucene.Net.Search.Similarities
     {
         /// <summary>
         /// <c>log2(Math.E)</c>, precomputed. </summary>
-        protected internal static double LOG2_E = Log2(Math.E);
+        private static double LOG2_E = Log2(Math.E);
 
         /// <summary>
         /// Sole constructor: parameter-free </summary>

@@ -40,7 +40,7 @@ namespace Lucene.Net.Util.Automaton
 
         private static readonly int[] endCodes = new int[] { 127, 2047, 65535, 1114111 };
 
-        internal static int[] MASKS = LoadMasks();
+        private static int[] MASKS = LoadMasks();
 
         private static int[] LoadMasks() // LUCENENET: Avoid static constructors (see https://github.com/apache/lucenenet/pull/224#issuecomment-469284006)
         {

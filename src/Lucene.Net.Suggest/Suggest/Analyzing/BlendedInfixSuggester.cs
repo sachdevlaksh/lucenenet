@@ -47,12 +47,12 @@ namespace Lucene.Net.Search.Suggest.Analyzing
         /// <summary>
         /// Coefficient used for linear blending
         /// </summary>
-        protected internal static double LINEAR_COEF = 0.10;
+        private static readonly double LINEAR_COEF = 0.10;
 
         /// <summary>
         /// Default factor
         /// </summary>
-        public static int DEFAULT_NUM_FACTOR = 10;
+        public static readonly int DEFAULT_NUM_FACTOR = 10;
 
         /// <summary>
         /// Factor to multiply the number of searched elements

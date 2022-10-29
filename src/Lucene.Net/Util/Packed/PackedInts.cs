@@ -46,32 +46,32 @@ namespace Lucene.Net.Util.Packed
         /// <summary>
         /// At most 700% memory overhead, always select a direct implementation.
         /// </summary>
-        public static float FASTEST = 7f;
+        public static readonly float FASTEST = 7f;
 
         /// <summary>
         /// At most 50% memory overhead, always select a reasonably fast implementation.
         /// </summary>
-        public static float FAST = 0.5f;
+        public static readonly float FAST = 0.5f;
 
         /// <summary>
         /// At most 20% memory overhead.
         /// </summary>
-        public static float DEFAULT = 0.2f;
+        public static readonly float DEFAULT = 0.2f;
 
         /// <summary>
         /// No memory overhead at all, but the returned implementation may be slow.
         /// </summary>
-        public static float COMPACT = 0f;
+        public static readonly float COMPACT = 0f;
 
         /// <summary>
         /// Default amount of memory to use for bulk operations.
         /// </summary>
-        public static int DEFAULT_BUFFER_SIZE = 1024; // 1K
+        public static readonly int DEFAULT_BUFFER_SIZE = 1024; // 1K
 
-        public static string CODEC_NAME = "PackedInts";
-        public static int VERSION_START = 0; // PackedInts were long-aligned
-        public static int VERSION_BYTE_ALIGNED = 1;
-        public static int VERSION_CURRENT = VERSION_BYTE_ALIGNED;
+        public static readonly string CODEC_NAME = "PackedInts";
+        public static readonly int VERSION_START = 0; // PackedInts were long-aligned
+        public static readonly int VERSION_BYTE_ALIGNED = 1;
+        public static readonly int VERSION_CURRENT = VERSION_BYTE_ALIGNED;
 
         /// <summary>
         /// Check the validity of a version number.
@@ -1031,7 +1031,7 @@ namespace Lucene.Net.Util.Packed
         }
 
         /// <summary>
-        /// Retrieve <see cref="PackedInt32s"/> as a <see cref="IReaderIterator"/>. 
+        /// Retrieve <see cref="PackedInt32s"/> as a <see cref="IReaderIterator"/>.
         /// <para/>
         /// @lucene.internal
         /// </summary>
@@ -1345,7 +1345,7 @@ namespace Lucene.Net.Util.Packed
 
         /// <summary>
         /// Returns how many bits are required to hold values up
-        /// to and including <paramref name="maxValue"/>. 
+        /// to and including <paramref name="maxValue"/>.
         /// <para/>
         /// @lucene.internal
         /// </summary>
@@ -1362,7 +1362,7 @@ namespace Lucene.Net.Util.Packed
 
         /// <summary>
         /// Calculates the maximum unsigned long that can be expressed with the given
-        /// number of bits. 
+        /// number of bits.
         /// <para/>
         /// @lucene.internal
         /// </summary>

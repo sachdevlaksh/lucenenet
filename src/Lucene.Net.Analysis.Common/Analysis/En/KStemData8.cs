@@ -47,7 +47,7 @@ namespace Lucene.Net.Analysis.En
         private KStemData8()
         {
         }
-        internal static string[] data = new string[] {
+        internal static readonly string[] data = new string[] {
             "tenor","tenpin","tense","tensile","tension",
             "tent","tentacle","tentative","tenterhooks","tenuity",
             "tenuous","tenure","tepee","tepid","tequila",

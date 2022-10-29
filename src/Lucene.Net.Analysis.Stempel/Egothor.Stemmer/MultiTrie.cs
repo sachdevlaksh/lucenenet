@@ -68,8 +68,8 @@ namespace Egothor.Stemmer
     /// </summary>
     public class MultiTrie : Trie
     {
-        internal static char EOM = '*';
-        internal static string EOM_NODE = "" + EOM;
+        internal static readonly char EOM = '*';
+        internal static readonly string EOM_NODE = "" + EOM;
 
         protected IList<Trie> m_tries = new JCG.List<Trie>();
 

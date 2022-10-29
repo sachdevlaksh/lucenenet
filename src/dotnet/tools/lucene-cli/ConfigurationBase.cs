@@ -26,7 +26,7 @@ namespace Lucene.Net.Cli
     public abstract class ConfigurationBase : CommandLineApplication
     {
         private static readonly Assembly thisAssembly = typeof(ConfigurationBase).Assembly;
-        protected static string HELP_VALUE_NAME = "help";
+        protected static readonly string HELP_VALUE_NAME = "help";
 
         protected ConfigurationBase()
             //: base(throwOnUnexpectedArg: false)
@@ -35,7 +35,7 @@ namespace Lucene.Net.Cli
             help.UniqueId = HELP_VALUE_NAME;
             help.ShowInHelpText = false;
 
-            this.ShortVersionGetter = () => 
+            this.ShortVersionGetter = () =>
             {
                 return "Lucene.Net Command Line Utility, Version: " + thisAssembly
                     .GetCustomAttribute<AssemblyInformationalVersionAttribute>()

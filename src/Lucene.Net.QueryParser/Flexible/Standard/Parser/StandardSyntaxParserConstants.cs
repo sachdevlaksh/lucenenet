@@ -103,7 +103,7 @@
     public static class StandardSyntaxParserConstants
     {
         /// <summary>Literal token values.</summary>
-        public static string[] TokenImage = new string[] {
+        internal static readonly string[] TokenImage = new string[] {
             "<EOF>",
             "<_NUM_CHAR>",
             "<_ESCAPED_CHAR>",

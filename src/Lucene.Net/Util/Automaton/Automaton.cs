@@ -82,7 +82,7 @@ namespace Lucene.Net.Util.Automaton
 
         /// <summary>
         /// Selects minimization algorithm (default: <c>MINIMIZE_HOPCROFT</c>). </summary>
-        internal static int minimization = MINIMIZE_HOPCROFT;
+        private static int minimization = MINIMIZE_HOPCROFT;
 
         /// <summary>
         /// Initial state of this automaton. </summary>
@@ -109,13 +109,13 @@ namespace Lucene.Net.Util.Automaton
 
         /// <summary>
         /// Minimize always flag. </summary>
-        internal static bool minimize_always = false;
+        private static bool minimize_always = false;
 
         /// <summary>
         /// Selects whether operations may modify the input automata (default:
         /// <c>false</c>).
         /// </summary>
-        internal static bool allow_mutation = false;
+        private static bool allow_mutation = false;
 
         /// <summary>
         /// Constructs a new automaton that accepts the empty language. Using this

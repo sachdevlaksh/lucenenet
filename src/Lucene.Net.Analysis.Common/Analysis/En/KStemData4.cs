@@ -47,7 +47,7 @@ namespace Lucene.Net.Analysis.En
         private KStemData4()
         {
         }
-        internal static string[] data = new string[] {
+        internal static readonly string[] data = new string[] {
             "granular","granulate","granule","grape","grapefruit",
             "grapeshot","grapevine","graph","graphic","graphical",
             "graphically","graphite","graphology","grapnel","grapple",

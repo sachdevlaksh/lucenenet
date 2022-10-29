@@ -113,7 +113,7 @@ namespace Lucene.Net.Index
         /// Change to true to see details of reference counts when
         /// infoStream is enabled
         /// </summary>
-        public static bool VERBOSE_REF_COUNTS = false;
+        const bool VERBOSE_REF_COUNTS = false;
 
         // Used only for assert
         private readonly IndexWriter writer;

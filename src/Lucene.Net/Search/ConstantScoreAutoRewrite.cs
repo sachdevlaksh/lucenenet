@@ -50,13 +50,13 @@ namespace Lucene.Net.Search
         /// doc Wikipedia index.  With more than 350 terms in the
         /// query, the filter method is fastest:
         /// </summary>
-        public static int DEFAULT_TERM_COUNT_CUTOFF = 350;
+        const int DEFAULT_TERM_COUNT_CUTOFF = 350;
 
         /// <summary>
         /// If the query will hit more than 1 in 1000 of the docs
         /// in the index (0.1%), the filter method is fastest:
         /// </summary>
-        public static double DEFAULT_DOC_COUNT_PERCENT = 0.1;
+        const double DEFAULT_DOC_COUNT_PERCENT = 0.1;
 
         private int termCountCutoff = DEFAULT_TERM_COUNT_CUTOFF;
         private double docCountPercent = DEFAULT_DOC_COUNT_PERCENT;

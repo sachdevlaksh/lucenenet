@@ -35,7 +35,7 @@ namespace Lucene.Net.QueryParsers.Xml
         protected QueryBuilderFactory m_queryFactory;
         protected FilterBuilderFactory m_filterFactory;
         //Controls the max size of the LRU cache used for QueryFilter objects parsed.
-        public static int maxNumCachedFilters = 20;
+        const int maxNumCachedFilters = 20;
 
         /// <summary>
         /// Construct an XML parser that uses a single instance <see cref="QueryParser"/> for handling
