@@ -115,7 +115,7 @@ namespace Lucene.Net.Util.Automaton
         /// Selects whether operations may modify the input automata (default:
         /// <c>false</c>).
         /// </summary>
-        private static bool _allowMutation = false;
+        private static bool allow_mutation = false;
 
         /// <summary>
         /// Constructs a new automaton that accepts the empty language. Using this
@@ -170,8 +170,8 @@ namespace Lucene.Net.Util.Automaton
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool SetAllowMutate(bool flag)
         {
-            bool b = _allowMutation;
-            _allowMutation = flag;
+            bool b = allow_mutation;
+            allow_mutation = flag;
             return b;
         }
 
@@ -182,7 +182,7 @@ namespace Lucene.Net.Util.Automaton
         /// default, the flag is not set.
         /// </summary>
         /// <returns> current value of the flag </returns>
-        internal static bool AllowMutate => _allowMutation;
+        internal static bool AllowMutate => allow_mutation;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual void CheckMinimizeAlways()
@@ -625,10 +625,10 @@ namespace Lucene.Net.Util.Automaton
             //throw UnsupportedOperationException.Create("use BasicOperations.sameLanguage instead");
         }
 
-        // LUCENENET specific - in .NET, we can't simply throw an exception here because
+        // LUCENENET specific - in .NET, we can't simply throw an exception here because 
         // collections use this to determine equality. Most of this code was pieced together from
         // BasicOperations.SubSetOf (which, when done both ways determines equality).
-        public override int GetHashCode()
+        public override int GetHashCode() 
         {
             if (IsSingleton)
             {
@@ -762,13 +762,13 @@ namespace Lucene.Net.Util.Automaton
         }
 
         /// <summary>
-        /// Returns a clone of this automaton unless <see cref="_allowMutation"/> is
+        /// Returns a clone of this automaton unless <see cref="allow_mutation"/> is
         /// set, expands if singleton.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual Automaton CloneExpandedIfRequired()
         {
-            if (_allowMutation)
+            if (allow_mutation)
             {
                 ExpandSingleton();
                 return this;
@@ -813,12 +813,12 @@ namespace Lucene.Net.Util.Automaton
 
         /// <summary>
         /// Returns a clone of this automaton, or this automaton itself if
-        /// <see cref="_allowMutation"/> flag is set.
+        /// <see cref="allow_mutation"/> flag is set.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal virtual Automaton CloneIfRequired()
         {
-            if (_allowMutation)
+            if (allow_mutation)
             {
                 return this;
             }

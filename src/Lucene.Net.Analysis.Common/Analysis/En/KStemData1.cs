@@ -753,3 +753,4 @@ namespace Lucene.Net.Analysis.En
         };
     }
 }
+

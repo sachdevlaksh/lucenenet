@@ -40,7 +40,7 @@ namespace Lucene.Net.Util.Automaton
 
         private static readonly int[] endCodes = new int[] { 127, 2047, 65535, 1114111 };
 
-        private static int[] _masks = LoadMasks();
+        private static int[] MASKS = LoadMasks();
 
         private static int[] LoadMasks() // LUCENENET: Avoid static constructors (see https://github.com/apache/lucenenet/pull/224#issuecomment-469284006)
         {
@@ -131,7 +131,7 @@ namespace Lucene.Net.Util.Automaton
             {
                 for (int i = 0; i < numBytes; i++)
                 {
-                    bytes[numBytes - i].Value = 128 | (code & _masks[5]);
+                    bytes[numBytes - i].Value = 128 | (code & MASKS[5]);
                     bytes[numBytes - i].Bits = 6;
                     code >>= 6;
                 }
@@ -244,7 +244,7 @@ namespace Lucene.Net.Util.Automaton
             if (upto == utf8.len - 1)
             {
                 // Done recursing
-                start.AddTransition(new Transition(utf8.ByteAt(upto), utf8.ByteAt(upto) | _masks[utf8.NumBits(upto) - 1], end)); // type=start
+                start.AddTransition(new Transition(utf8.ByteAt(upto), utf8.ByteAt(upto) | MASKS[utf8.NumBits(upto) - 1], end)); // type=start
             }
             else
             {
@@ -265,7 +265,7 @@ namespace Lucene.Net.Util.Automaton
             if (upto == utf8.len - 1)
             {
                 // Done recursing
-                start.AddTransition(new Transition(utf8.ByteAt(upto) & (~_masks[utf8.NumBits(upto) - 1]), utf8.ByteAt(upto), end)); // type=end
+                start.AddTransition(new Transition(utf8.ByteAt(upto) & (~MASKS[utf8.NumBits(upto) - 1]), utf8.ByteAt(upto), end)); // type=end
             }
             else
             {
@@ -279,7 +279,7 @@ namespace Lucene.Net.Util.Automaton
                 }
                 else
                 {
-                    startCode = utf8.ByteAt(upto) & (~_masks[utf8.NumBits(upto) - 1]);
+                    startCode = utf8.ByteAt(upto) & (~MASKS[utf8.NumBits(upto) - 1]);
                 }
                 if (doAll && utf8.ByteAt(upto) != startCode)
                 {

@@ -58,7 +58,7 @@ namespace Lucene.Net.Util.Automaton
         internal int number;
 
         internal int id;
-        private static int _nextId;
+        private static int next_id;
 
         /// <summary>
         /// Constructs a new state. Initially, the new state is a reject state.
@@ -66,7 +66,7 @@ namespace Lucene.Net.Util.Automaton
         public State()
         {
             //ResetTransitions(); // LUCENENET: Let class initializer set these
-            id = _nextId++;
+            id = next_id++;
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Lucene.Net.Util.Automaton
         /// <summary>
         /// Virtually adds an epsilon transition to the target
         /// <paramref name="to"/> state.  this is implemented by copying all
-        /// transitions from <paramref name="to"/> to this state, and if
+        /// transitions from <paramref name="to"/> to this state, and if 
         /// <paramref name="to"/> is an accept state then set accept for this state.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

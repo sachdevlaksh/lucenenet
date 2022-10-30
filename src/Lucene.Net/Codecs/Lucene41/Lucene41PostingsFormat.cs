@@ -385,7 +385,7 @@ namespace Lucene.Net.Codecs.Lucene41
 
         /// <summary>
         /// Creates <see cref="Lucene41PostingsFormat"/> with custom
-        /// values for <paramref name="minTermBlockSize"/> and
+        /// values for <paramref name="minTermBlockSize"/> and 
         /// <paramref name="maxTermBlockSize"/> passed to block terms dictionary. </summary>
         /// <seealso cref="BlockTreeTermsWriter.BlockTreeTermsWriter(SegmentWriteState,PostingsWriterBase,int,int)"/>
         public Lucene41PostingsFormat(int minTermBlockSize, int maxTermBlockSize)

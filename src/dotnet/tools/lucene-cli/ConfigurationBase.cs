@@ -35,7 +35,7 @@ namespace Lucene.Net.Cli
             help.UniqueId = HELP_VALUE_NAME;
             help.ShowInHelpText = false;
 
-            this.ShortVersionGetter = () =>
+            this.ShortVersionGetter = () => 
             {
                 return "Lucene.Net Command Line Utility, Version: " + thisAssembly
                     .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
