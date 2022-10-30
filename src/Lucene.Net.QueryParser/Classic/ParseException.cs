@@ -193,12 +193,12 @@ namespace Lucene.Net.QueryParsers.Classic
             retval += expected.ToString();
             return retval;
         }
-        
+
         /// <summary> 
         /// The end of line string for this machine.
         /// </summary>
         protected static readonly string eol = Environment.NewLine;
-
+        
         /// <summary> 
         /// Used to convert raw characters to their escaped version
         /// when these raw version cannot be used as part of an ASCII

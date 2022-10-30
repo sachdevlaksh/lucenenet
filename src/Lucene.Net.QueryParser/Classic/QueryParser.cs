@@ -40,7 +40,7 @@ namespace Lucene.Net.QueryParsers.Classic
     /// <item><description> a term followed by a colon, indicating the field to be searched.
     /// This enables one to construct queries which search multiple fields.</description></item>
     /// </list>
-    ///
+    /// 
     /// <para/>
     /// A clause may be either:
     /// <list type="bullet">
@@ -622,9 +622,9 @@ namespace Lucene.Net.QueryParsers.Classic
         //private static void Jj_la1_init_0()
         //{
         //    jj_la1_0 = new uint[]
-        //    {
-        //        0x300, 0x300, 0x1c00, 0x1c00, 0xfda7f00, 0x120000, 0x40000, 0xfda6000, 0x9d22000, 0x200000,
-        //        0x200000, 0x40000, 0x6000000, 0x80000000, 0x10000000, 0x80000000, 0x60000000, 0x40000,
+        //    { 
+        //        0x300, 0x300, 0x1c00, 0x1c00, 0xfda7f00, 0x120000, 0x40000, 0xfda6000, 0x9d22000, 0x200000, 
+        //        0x200000, 0x40000, 0x6000000, 0x80000000, 0x10000000, 0x80000000, 0x60000000, 0x40000, 
         //        0x200000, 0x40000, 0xfda2000, 
         //    };
         //}
@@ -632,8 +632,8 @@ namespace Lucene.Net.QueryParsers.Classic
         //private static void Jj_la1_init_1()
         //{
         //    jj_la1_1 = new int[]
-        //    {
-        //        0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0,
+        //    { 
+        //        0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 
         //        0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 
         //    };
         //}

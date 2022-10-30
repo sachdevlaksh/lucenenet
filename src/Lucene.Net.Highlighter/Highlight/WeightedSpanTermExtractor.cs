@@ -140,7 +140,7 @@ namespace Lucene.Net.Search.Highlight
                 // specialized since rewriting would change the result query 
                 // this query is TermContext sensitive.
                 ExtractWeightedTerms(terms, query);
-            }
+            } 
             else if (query is DisjunctionMaxQuery disjunctionMaxQuery)
             {
                 foreach (var q in disjunctionMaxQuery)
@@ -430,7 +430,7 @@ namespace Lucene.Net.Search.Highlight
             {
                 return base.GetBinaryDocValues(FIELD_NAME);
             }
-            
+
             public override SortedDocValues GetSortedDocValues(string field)
             {
                 return base.GetSortedDocValues(FIELD_NAME);

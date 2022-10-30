@@ -251,7 +251,7 @@ namespace Lucene.Net.Util.Automaton
                 State n = NewUTF8State();
                 start.AddTransition(new Transition(utf8.ByteAt(upto), n)); // type=start
                 Start(n, end, utf8, 1 + upto, true);
-                int endCode = utf8.ByteAt(upto) | _masks[utf8.NumBits(upto) - 1];
+                int endCode = utf8.ByteAt(upto) | MASKS[utf8.NumBits(upto) - 1];
                 if (doAll && utf8.ByteAt(upto) != endCode)
                 {
                     All(start, end, utf8.ByteAt(upto) + 1, endCode, utf8.len - upto - 1);

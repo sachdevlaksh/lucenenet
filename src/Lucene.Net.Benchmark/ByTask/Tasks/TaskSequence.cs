@@ -46,7 +46,7 @@ namespace Lucene.Net.Benchmarks.ByTask.Tasks
         private bool resetExhausted = false;
         private PerfTask[] tasksArray;
         private bool anyExhaustibleTasks;
-        private readonly bool collapsable = false; // to not collapse external sequence named in alg. 
+        private readonly bool collapsable = false; // to not collapse external sequence named in alg.  
 
         private bool fixedTime;                      // true if we run for fixed time
         private double runTimeSec;                      // how long to run for

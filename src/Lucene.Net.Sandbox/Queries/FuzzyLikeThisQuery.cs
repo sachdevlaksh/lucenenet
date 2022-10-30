@@ -39,7 +39,7 @@ namespace Lucene.Net.Sandbox.Queries
     /// <para/>
     /// For each source term the fuzzy variants are held in a <see cref="BooleanQuery"/> with no coord factor (because
     /// we are not looking for matches on multiple variants in any one doc). Additionally, a specialized
-    /// <see cref="TermQuery"/> is used for variants and does not use that variant term's IDF because this would favour rarer
+    /// <see cref="TermQuery"/> is used for variants and does not use that variant term's IDF because this would favour rarer 
     /// terms eg misspellings. Instead, all variants use the same IDF ranking (the one for the source query 
     /// term) and this is factored into the variant's boost. If the source query term does not exist in the
     /// index the average IDF of the variants is used.
